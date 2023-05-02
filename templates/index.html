@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+
+{% block title %}{% endblock %}
+
+
+
+{% block body %}
+<div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+{% for el in data %}
+
+      <div class="col">
+        <div class="card mb-4 rounded-3 shadow-sm">
+          <img src="{{ el.img }}" class="card-img-top" alt="..." width="100px" height="350px">
+          <a  class="btn btn-outline-danger" href="/index/{{ el.id }}/delete">УДАЛИТЬ</a>
+          <div class="card-header py-3">
+            <h4 class="my-0 fw-normal">{{ el.title }}</h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title">{{ el.price }}<small class="text-body-secondary fw-light">/рубасов</small></h1>
+            <ul class="list-unstyled mt-3 mb-4">
+
+            </ul>
+            <button type="button" class="w-100 btn btn-lg btn-outline-primary">Sign up for free</button>
+          </div>
+        </div>
+      </div>
+
+
+
+{% endfor %}
+    </div>
+{% endblock %}
